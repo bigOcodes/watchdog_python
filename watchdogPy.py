@@ -26,8 +26,7 @@ class monitorFolder(FileSystemEventHandler):
     def checkFolderSize(self, src_path):
         if os.path.isdir(src_path):
             if os.path.getsize(src_path) > self.FILE_SIZE:
-                print("Time to backup the dir")
-                
+                print("Time to backup the dir")   
         else:
             if os.path.getsize(src_path) > self.FILE_SIZE:
                 print("File is too big")
@@ -38,7 +37,7 @@ if __name__ == "__main__":
     event_handler = monitorFolder()
     observer = Observer()
     observer.schedule(event_handler, path=src_path, recursive = True)
-    print("Monitoring Started")
+    print("Monitoring Started . . .")
     observer.start()
     
     try:
